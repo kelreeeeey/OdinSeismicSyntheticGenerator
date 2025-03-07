@@ -5,8 +5,8 @@ all:
 	odin build . -out:./bin/syndatagen.exe --debug
 
 opti:
-	# odin build . -out:fastDTW.exe -o:speed -no-bounds-check -disable-assert
-	odin build . -out:./bin/syndatagen.exe -o:aggressive -microarch:native -no-bounds-check -disable-assert
+	odin build . -out:./bin/syndatagen.exe -o:speed -no-bounds-check -disable-assert
+	# odin build . -out:./bin/syndatagen.exe -o:aggressive -microarch:native -no-bounds-check -disable-assert
 
 clean:
 	rm ./bin/syndatagen.exe
