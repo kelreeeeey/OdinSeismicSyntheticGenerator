@@ -49,7 +49,7 @@ Python. I'm currenlty learning C-Zig-and-Odin, i kinda scared of C and found Zig
 slighlty complicated, then i bumped to Odin, which i found it, kinda less scary
 than those 2, and feels like Python if that makes sense.
 
-All of the code were reproduced by this repo:
+All of the code were reproduced from this repo:
 python repo: [3D-Seismic-Image-Fault-Segmentation](https://github.com/Jun-Tam/3D-Seismic-Image-Fault-Segmentation/tree/master)
 
 ## How to use
@@ -112,7 +112,7 @@ breakdown:
 }
 ```
 
-⚠️ if you want to make a new parameter, please copy the [example](./example_parameter.json) and chage it.
+⚠️ if you want to make a new parameter, please copy the [example](./example_parameter.json) and change it.
 
 ## Reference
 
