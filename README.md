@@ -24,7 +24,7 @@ The paper by Wu et al., (2019) can be found [here](https://www.researchgate.net/
 - [✅] Folding ($S_2$)
 
 $$
-Folding_{(S2)}(X, Y, Z) = a + \frac{1.5}{max(Z)} \times Z \sum_{k=1}^{k=N} b_k \times e^{\frac{(X-c_k)^2 + (Y-d_k)^2}{2\sigma^{2}_{k}}} 
+Folding_{(S2)}(X, Y, Z) = a + \frac{1.5}{max(Z)} \times Z  \( \sum_{k=1}^{k=N} b_k \times e^{\frac{(X-c_k)^2 + (Y-d_k)^2}{2\sigma^{2}_{k}}} \)
 $$
 
 - [ ] input parameters guard
