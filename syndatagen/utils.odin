@@ -1,4 +1,4 @@
-package layer_model
+package seismic_synthetic_generator
 
 import "base:intrinsics"
 import "core:math"

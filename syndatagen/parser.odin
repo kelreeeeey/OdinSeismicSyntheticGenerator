@@ -1,4 +1,4 @@
-package parameters
+package seismic_synthetic_generator
 
 import "core:encoding/json"
 import "core:os"

@@ -4,23 +4,21 @@ import "core:fmt"
 import "core:time"
 import "core:os"
 
-import pts "syndatagen/point_and_grid"
-import param "syndatagen/parameters"
-import lyr "syndatagen/layer_model"
+import syd "syndatagen"
 
 main :: proc() {
     start_time := time.now()
 
-    input_params := param.read_params(filename = os.args[1])
+    input_params := syd.read_params(filename = os.args[1])
     data_dim := input_params.data_dim
     folding := input_params.folding
 
-    prm := param.make_DefineParams(
+    prm := syd.make_DefineParams(
         patch_size=data_dim.patch_size,
         trace_size=data_dim.trace_size)
-    defer param.defer_prm(params=prm)
+    defer syd.defer_prm(params=prm)
 
-    layer_models := lyr.create_1d_model(
+    layer_models := syd.create_1d_model(
         prm.nz_tr,
         prm.nxy_tr,
         data_dim.layer_position)
@@ -28,13 +26,13 @@ main :: proc() {
         len(layer_models.reflections))
     fmt.printfln("Reflection[0]: %v",
         len(layer_models.reflections[0]))
-    defer lyr.defer_layer_model(model=layer_models)
+    defer syd.defer_layer_model(model=layer_models)
 
     c := folding.c
     d := folding.d
     sigma := folding.sigma
 
-    gaussed_refl := lyr.infer_folding(
+    gaussed_refl := syd.infer_folding(
         reflection=layer_models.reflections,
         xy=prm.xy,
         a = folding.a,

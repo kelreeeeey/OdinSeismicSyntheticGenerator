@@ -1,4 +1,4 @@
-package points_and_grid
+package seismic_synthetic_generator
 
 //@(require_result)
 generate_2d_grid :: proc(n1, n2: int) -> []PointXY {
