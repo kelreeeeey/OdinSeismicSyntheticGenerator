@@ -1,0 +1,30 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  build:
+    cmds:
+      - odin build . -out:./bin/syndatagen.exe -o:speed
+    aliases:
+    - b
+
+  run:
+    cmds:
+      - ./bin/syndatagen.exe ./example_parameter.json
+      - ls -1 ./out-examples/
+      - python ./check-out.py
+    deps:
+      - build
+    aliases:
+      - r
+
+
