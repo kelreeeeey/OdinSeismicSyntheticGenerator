@@ -1,9 +1,11 @@
-package seismic_synthetic_generator
+package layer_model
 
 import "core:math"
 import "core:slice"
 import "core:fmt"
 import "core:time"
+
+import pts "../point_and_grid"
 
 // gauss2d element-wise
 // $z = b \times e^{ \frac{-{x-2}^2 + {y-d}^2}{2 \times sigma^2} }$
@@ -15,7 +17,7 @@ folding_s2 :: proc(x, y, b, c, d, sigma: f64) -> f64 {
 }
 
 folding_s1 :: proc(z: []int, a: f64, folding2: []f64) -> [][]f64 {
-    z64 := convert_slice(f64, z, f64(0.00001)) // add 0.000001 to avoid 0-division
+    z64 := convert_slice(f64, z, f64(0.00001))
     maxZ := slice.max(z64)
     out := make([][]f64, len(folding2))
     outer_prod := outer_product( folding2, z64 )
@@ -33,7 +35,7 @@ folding_s1 :: proc(z: []int, a: f64, folding2: []f64) -> [][]f64 {
 
 infer_folding :: proc(
     reflection: [][]f64,
-    xy: []PointXY,
+    xy: []pts.PointXY,
     a : f64,
     z : []int,
     nxy_tr : int,

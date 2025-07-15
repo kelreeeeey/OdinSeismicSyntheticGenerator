@@ -1,4 +1,4 @@
-package seismic_synthetic_generator
+package points_and_grid
 
 // Points
 PointXY :: struct { idx, x, y:int }

@@ -1,4 +1,4 @@
-package seismic_synthetic_generator
+package layer_model
 
 import rndm "core:math/rand"
 import "core:slice"

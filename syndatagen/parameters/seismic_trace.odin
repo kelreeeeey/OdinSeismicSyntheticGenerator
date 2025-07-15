@@ -1,4 +1,6 @@
-package seismic_synthetic_generator
+package parameters
+
+import pts "../point_and_grid"
 
 // DefineParams structure
 DefineParams :: struct {
@@ -17,8 +19,8 @@ DefineParams :: struct {
     // Synthetic traces
     x, y, z: []int,
 
-    xy: []PointXY,
-    xyz: []PointXYZ,
+    xy: []pts.PointXY,
+    xyz: []pts.PointXYZ,
 
     nx_tr, ny_tr, nz_tr: int,
     nxy_tr, nxyz_tr: int,
@@ -53,8 +55,8 @@ make_DefineParams :: proc(patch_size: int, trace_size := 200) -> DefineParams {
     for i in 0..<nz_tr { z[i] = int(i) }
 
     // Generate xy grid
-    xy := generate_grid(n1=nx_tr, n2=ny_tr)
-    xyz := generate_grid(n1=nx_tr, n2=ny_tr, n3=nz_tr)
+    xy := pts.generate_grid(n1=nx_tr, n2=ny_tr)
+    xyz := pts.generate_grid(n1=nx_tr, n2=ny_tr, n3=nz_tr)
 
     //// Generate xyz grid
     //xyz := make([]Point, nxyz_tr)

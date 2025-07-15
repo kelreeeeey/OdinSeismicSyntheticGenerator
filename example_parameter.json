@@ -1,13 +1,18 @@
 {
   "data_dim" : {
     "patch_size": 128,
-    "trace_size": 160,
+    "trace_size": 200,
     "layer_position": [
       0,
       17,
       30,
       50,
-      80
+      88,
+      100,
+      120,
+      130,
+      160,
+      199
     ]
   },
   "folding" : {

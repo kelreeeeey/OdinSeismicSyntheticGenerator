@@ -6,9 +6,7 @@ all:
 
 opti:
 	odin build . -out:./bin/syndatagen.exe -o:speed -no-bounds-check -disable-assert
-
-opti2:
-	odin build . -out:./bin/syndatagen.exe -o:speed -disable-assert
+	# odin build . -out:./bin/syndatagen.exe -o:aggressive -microarch:native -no-bounds-check -disable-assert
 
 clean:
 	rm ./bin/syndatagen.exe

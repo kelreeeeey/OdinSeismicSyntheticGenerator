@@ -1,4 +1,4 @@
-package seismic_synthetic_generator
+package layer_model
 
 outer_product_f32 :: proc(x, y: []f32) -> [][]f32 {
     result := make([][]f32, len(x))
